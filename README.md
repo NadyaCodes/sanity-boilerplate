@@ -18,6 +18,16 @@ Helpful tutorial is here: [https://www.youtube.com/watch?v=OcTPaUfay5I](https://
 
 3. Update sanity.config.ts with correct projectID and other items
 
+4. To add schemas
+
+- add a new schema file (sanity/schemas)
+- add schema file to index.ts
+
+5. Data grabbing functions
+
+- in sanity/sanity-utils.ts
+- uses groq
+
 ## Getting Started
 
 First, run the development server:
