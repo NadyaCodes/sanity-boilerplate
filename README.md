@@ -1,5 +1,23 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Sanity Boilerplate Stuff
+
+Helpful tutorial is here: [https://www.youtube.com/watch?v=OcTPaUfay5I](https://www.youtube.com/watch?v=OcTPaUfay5I)
+
+1. Create a Sanity project in terminal
+
+- npm create sanity@latest
+
+2. Add url to sanity
+
+- Go to [https://manage.sanity.io/](https://manage.sanity.io/) and select that project
+
+- Go to API and add CORS origins
+
+- Add url and 'allow credentials'
+
+3. Update sanity.config.ts with correct projectID and other items
+
 ## Getting Started
 
 First, run the development server:
