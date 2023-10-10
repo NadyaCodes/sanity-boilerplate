@@ -1,23 +1,23 @@
-import { getProjects } from "@/sanity/sanity-utils";
+import { getPosts } from "@/sanity/sanity-utils";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function Home() {
-  const projects = await getProjects();
+  const posts = await getPosts();
   return (
-    <div className="text-center py-10">
-      <h1 className="text-6xl font-extrabold my-10 bg-gradient-to-r from-emerald-950 to-emerald-800 w-fit mx-auto bg-clip-text text-transparent drop-shadow-2xl py-5">
-        Welcome to my Boilerplate
-      </h1>
+    <div className="text-center">
+      <h1 className="w-fit mx-auto">Welcome to my Boilerplate</h1>
       <div className="text-lg my-5">
-        I have many featured projects which can be viewed here:
+        I have many featured posts which can be viewed here:
       </div>
       <div className="my-10 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 p-10">
-        {projects.map((element) => {
+        {posts.map((element) => {
           return (
-            <div
+            <Link
               key={element._id}
               className="flex flex-col place-self-center w-full justify-between font-semibold border-2 border-slate-700 rounded-lg p-3 hover:scale-105 hover:shadow-md transition"
               style={{ maxWidth: "510px" }}
+              href={`/posts/${element.slug}`}
             >
               <div className="">
                 {element.image && (
@@ -34,7 +34,7 @@ export default async function Home() {
               </div>
 
               <div className="">{element.name}</div>
-            </div>
+            </Link>
           );
         })}
       </div>
