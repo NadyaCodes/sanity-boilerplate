@@ -32,13 +32,23 @@ Helpful tutorial is here: [https://www.youtube.com/watch?v=OcTPaUfay5I](https://
 
 - just in case everything is deleted by accident
 
-7. To Find embed links
+7. To find embed links
 
 - Youtube should be formatted like this: https://www.youtube.com/embed/E53nxfAVJxU?si=ArP-xebpW7s6isGl
 - play video
 - go to share
 - copy snippet from embed link
 - soundcloud is annoying to find...it's the src link in the iFrame
+
+8. Make create icon disappear in studio where necessary
+
+- in this one, it's the about page
+
+- #about-about-0 > div > div.sc-fHjqPf.jMLRGX.sc-hdFWlR.cJSNcO > div > div.sc-jXbUNg.jHZIZE.sc-jlZhew.eqarxG.sc-biptUy.cYvOaX > div > div > a {
+  display: none
+  }
+
+  9. Make a default for cases where they might accidentally delete the one that can't be recreated
 
 ## Getting Started
 

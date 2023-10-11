@@ -4,6 +4,7 @@ import type { Page } from "@/types/Page"
 import type { About } from "@/types/About"
 import type { GalleryImage } from "@/types/GalleryImage"
 import type { Media } from "@/types/Media"
+import type { Social } from "@/types/Social"
 import clientConfig from "./config/client-config"
 
 export async function getPosts(): Promise<Post[]> {
@@ -118,6 +119,18 @@ export async function getAudio(): Promise<Media[]> {
       name,
       url,
       content
+    }`
+  )
+}
+
+export async function getSocial(): Promise<Social[]> {
+
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "social"]{
+      _id,
+      _createdAt,
+      name,
+      url,
     }`
   )
 }

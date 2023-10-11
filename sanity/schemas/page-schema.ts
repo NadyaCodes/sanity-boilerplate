@@ -1,4 +1,4 @@
-interface CustomValidationRule {
+export interface CustomValidationRule {
   required: () => CustomValidationRule;
 }
 
