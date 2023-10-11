@@ -28,6 +28,10 @@ Helpful tutorial is here: [https://www.youtube.com/watch?v=OcTPaUfay5I](https://
 - in sanity/sanity-utils.ts
 - uses groq
 
+6. Create defaults for About Page and Contact Page schemas
+
+- just in case everything is deleted by accident
+
 ## Getting Started
 
 First, run the development server:

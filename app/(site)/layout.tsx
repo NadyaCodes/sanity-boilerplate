@@ -31,6 +31,12 @@ export default async function RootLayout({
               </Link>
             </div>
             <div className="pr-5">
+              <Link
+                href="/about"
+                className="mx-3 not-italic text-emerald-800 no-underline hover:bg-emerald-900 hover:text-white p-3 transition-all rounded"
+              >
+                About
+              </Link>
               {extraPages.map((page) => (
                 <Link
                   key={page._id}
@@ -40,10 +46,16 @@ export default async function RootLayout({
                   {page.name}
                 </Link>
               ))}
+              <Link
+                href="/contact"
+                className="mx-3 not-italic text-emerald-800 no-underline hover:bg-emerald-900 hover:text-white p-3 transition-all rounded"
+              >
+                Contact
+              </Link>
             </div>
           </div>
         </header>
-        <main className="py-10">{children}</main>
+        <main className="py-10 max-w-7xl mx-auto px-5">{children}</main>
       </body>
     </html>
   );

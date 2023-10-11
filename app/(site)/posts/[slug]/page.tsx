@@ -10,7 +10,7 @@ export default async function PostPage({ params }: Props) {
   const element = await getPost(params.slug);
 
   return (
-    <div className="max-w-7xl mx-auto px-5">
+    <div className="">
       <h1 className="w-fill text-center mx-auto pb-10">{element.name}</h1>
       <div>
         <PortableText value={element.content} />

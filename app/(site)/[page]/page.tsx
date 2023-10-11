@@ -10,7 +10,7 @@ type Props = {
 export default async function CustomPage({ params }: Props) {
   const page = await getPage(params.page);
   return (
-    <div className="max-w-7xl mx-auto px-5">
+    <div className="">
       <h1>{page.name}</h1>
       <div className="">
         <PortableText value={page.content} />

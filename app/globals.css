@@ -12,6 +12,10 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
+#about-about-0 > div > div.sc-fHjqPf.jMLRGX.sc-hdFWlR.cJSNcO > div > div.sc-jXbUNg.jHZIZE.sc-jlZhew.eqarxG.sc-biptUy.cYvOaX > div > div > a {
+  display: none
+}
+
 @layer base {
   * {
     @apply text-slate-700

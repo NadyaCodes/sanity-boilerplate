@@ -1,6 +1,7 @@
 import { createClient, groq } from "next-sanity"
 import type { Post } from "@/types/Post"
 import type { Page } from "@/types/Page"
+import type { About } from "@/types/About"
 import clientConfig from "./config/client-config"
 
 export async function getPosts(): Promise<Post[]> {
@@ -63,4 +64,19 @@ export async function getPage(slug: string): Promise<Page> {
     }`, { slug }
   )
   
+}
+
+export async function getAbout(): Promise<About> {
+
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "about"][0]{
+      _id,
+      _createdAt,
+      name,
+      "image": image.asset->url,
+      alt,
+      content,
+      "resume": resume.asset->url
+    }`
+  )
 }
