@@ -6,6 +6,8 @@ import type { GalleryImage } from "@/types/GalleryImage"
 import type { Media } from "@/types/Media"
 import type { Social } from "@/types/Social"
 import type { Contact } from "@/types/Contact"
+import type { HomeContent } from "@/types/HomeContent"
+import type { ContentBlock } from "@/types/ContentBlock"
 import clientConfig from "./config/client-config"
 
 export async function getPosts(): Promise<Post[]> {
@@ -146,6 +148,46 @@ export async function getContact(): Promise<Contact[]> {
       "image": image.asset->url,
       alt,
       content
+    }`
+  )
+}
+
+
+export async function getHomeContent(): Promise<HomeContent> {
+
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "home"][0]{
+      _id,
+      _createdAt,
+      name,
+      header,
+      homeContent,
+      "image": image.asset->url,
+      alt,
+    }`
+  )
+}
+
+export async function getPrivacyContent(): Promise<ContentBlock> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "home"][0]{
+      privacyContent
+    }`
+  )
+}
+
+export async function getTermsContent(): Promise<ContentBlock> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "home"][0]{
+      termsContent
+    }`
+  )
+}
+
+export async function getCopywriteContent(): Promise<{copywrite: string}> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "home"][0]{
+      copywrite
     }`
   )
 }

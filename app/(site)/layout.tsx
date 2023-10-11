@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import Menu from "./Menu";
-import { getExtraPages } from "@/sanity/sanity-utils";
+import { getCopywriteContent, getExtraPages } from "@/sanity/sanity-utils";
 import Socials from "./Socials";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,6 +19,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const extraPages = await getExtraPages();
+  const copywriteObj = await getCopywriteContent();
   return (
     <html lang="en">
       <body className={`my-10 ${inter.className}`}>
@@ -37,6 +38,19 @@ export default async function RootLayout({
           </div>
         </header>
         <main className="py-10 max-w-7xl mx-auto px-5">{children}</main>
+        <footer>
+          <div className="flex flex-col text-center">
+            <div>{copywriteObj.copywrite}</div>
+            <div>
+              <Link href="/privacy" className="m-2">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="m-2">
+                Terms and Conditions
+              </Link>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );

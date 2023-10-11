@@ -1,9 +1,11 @@
-import { getPosts } from "@/sanity/sanity-utils";
+import { getHomeContent, getPosts } from "@/sanity/sanity-utils";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
   const posts = await getPosts();
+  const homeContent = await getHomeContent();
+
   return (
     <div className="text-center">
       <h1 className="w-fit mx-auto">Welcome to my Boilerplate</h1>
@@ -38,6 +40,8 @@ export default async function Home() {
           );
         })}
       </div>
+      <h2>_____________</h2>
+      <h1>{homeContent?.header}</h1>
     </div>
   );
 }
