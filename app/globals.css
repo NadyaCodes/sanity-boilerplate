@@ -59,3 +59,8 @@ body {
   }
 
 }
+
+@keyframes scaleIn {
+  from {scale: 0.2;}
+  to {scale: 1;}
+}
