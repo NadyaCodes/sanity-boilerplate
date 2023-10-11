@@ -16,6 +16,10 @@ body {
   display: none
 }
 
+#home-home-0 > div > div.sc-fHjqPf.jMLRGX.sc-hdFWlR.cJSNcO > div > div.sc-jXbUNg.jHZIZE.sc-jlZhew.eqarxG.sc-biptUy.cYvOaX > div.sc-jXbUNg.bbOBvc.sc-jlZhew.jTeaMy > div > a {
+  display: none
+}
+
 @layer base {
   * {
     @apply text-slate-700
