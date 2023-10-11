@@ -1,10 +1,14 @@
+import { getDimensions } from "@/helpers/getDimensions";
 import { getHomeContent, getPosts } from "@/sanity/sanity-utils";
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
   const posts = await getPosts();
   const homeContent = await getHomeContent();
+
+  const heroImageDimensions = getDimensions(homeContent.image);
 
   return (
     <div className="text-center">
@@ -42,6 +46,27 @@ export default async function Home() {
       </div>
       <h2>_____________</h2>
       <h1>{homeContent?.header}</h1>
+      <div className="flex flex-row justify-around items-center">
+        <div className="m-3">
+          <PortableText value={homeContent.homeContent} />
+        </div>
+        <div className="">
+          <div className="max-w-full">
+            <Image
+              src={homeContent.image}
+              alt={
+                homeContent.alt ||
+                homeContent.header ||
+                "No Description Available"
+              }
+              width={heroImageDimensions[0]}
+              height={heroImageDimensions[1]}
+              layout="responsive"
+              className="rounded-lg border border-gray-500"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
