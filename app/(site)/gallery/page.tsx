@@ -1,20 +1,6 @@
 import { getGallery } from "@/sanity/sanity-utils";
 import ImageBlock from "./ImageBlock";
-
-const getDimensions = (url: string) => {
-  const parts = url.split("/");
-  const twoStrings = parts[parts.length - 1];
-
-  const [firstHalf, secondHalf] = twoStrings.split("x");
-
-  const firstHalfSplit = firstHalf.split("-");
-  const width = Number(firstHalfSplit[1]);
-
-  const secondHalfSplit = secondHalf.split(".");
-  const height = Number(secondHalfSplit[0]);
-
-  return [width, height];
-};
+import { getDimensions } from "@/helpers/getDimensions";
 
 export default async function Gallery() {
   const galleryImages = await getGallery();

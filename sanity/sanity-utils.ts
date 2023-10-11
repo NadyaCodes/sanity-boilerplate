@@ -5,6 +5,7 @@ import type { About } from "@/types/About"
 import type { GalleryImage } from "@/types/GalleryImage"
 import type { Media } from "@/types/Media"
 import type { Social } from "@/types/Social"
+import type { Contact } from "@/types/Contact"
 import clientConfig from "./config/client-config"
 
 export async function getPosts(): Promise<Post[]> {
@@ -131,6 +132,20 @@ export async function getSocial(): Promise<Social[]> {
       _createdAt,
       name,
       url,
+    }`
+  )
+}
+
+export async function getContact(): Promise<Contact[]> {
+
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "contact"]  | order(name asc){
+      _id,
+      _createdAt,
+      name,
+      "image": image.asset->url,
+      alt,
+      content
     }`
   )
 }
