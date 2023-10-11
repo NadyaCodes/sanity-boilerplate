@@ -3,6 +3,7 @@ import type { Post } from "@/types/Post"
 import type { Page } from "@/types/Page"
 import type { About } from "@/types/About"
 import type { GalleryImage } from "@/types/GalleryImage"
+import type { Media } from "@/types/Media"
 import clientConfig from "./config/client-config"
 
 export async function getPosts(): Promise<Post[]> {
@@ -91,6 +92,32 @@ export async function getGallery(): Promise<GalleryImage[]> {
       name,
       "image": image.asset->url,
       alt
+    }`
+  )
+}
+
+export async function getVideos(): Promise<Media[]> {
+
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "video"]  | order(name asc){
+      _id,
+      _createdAt,
+      name,
+      url,
+      content
+    }`
+  )
+}
+
+export async function getAudio(): Promise<Media[]> {
+
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "audio"]  | order(name asc){
+      _id,
+      _createdAt,
+      name,
+      url,
+      content
     }`
   )
 }

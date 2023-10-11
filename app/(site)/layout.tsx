@@ -38,6 +38,12 @@ export default async function RootLayout({
                 About
               </Link>
               <Link
+                href="/media"
+                className="mx-3 not-italic text-emerald-800 no-underline hover:bg-emerald-900 hover:text-white p-3 transition-all rounded"
+              >
+                Media
+              </Link>
+              <Link
                 href="/gallery"
                 className="mx-3 not-italic text-emerald-800 no-underline hover:bg-emerald-900 hover:text-white p-3 transition-all rounded"
               >

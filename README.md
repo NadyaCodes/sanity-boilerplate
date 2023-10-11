@@ -32,6 +32,14 @@ Helpful tutorial is here: [https://www.youtube.com/watch?v=OcTPaUfay5I](https://
 
 - just in case everything is deleted by accident
 
+7. To Find embed links
+
+- Youtube should be formatted like this: https://www.youtube.com/embed/E53nxfAVJxU?si=ArP-xebpW7s6isGl
+- play video
+- go to share
+- copy snippet from embed link
+- soundcloud is annoying to find...it's the src link in the iFrame
+
 ## Getting Started
 
 First, run the development server:
