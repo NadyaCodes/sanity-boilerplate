@@ -49,6 +49,12 @@ export default async function RootLayout({
                 Terms and Conditions
               </Link>
             </div>
+            <div className="m-5">
+              Website created by{" "}
+              <a href="https://www.nadyacorscadden.com" target="_blank">
+                Nadya Corscadden
+              </a>
+            </div>
           </div>
         </footer>
       </body>
